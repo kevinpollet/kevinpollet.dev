@@ -1,0 +1,41 @@
+{
+  "name": "kevinpollet.dev",
+  "description": "Source code for https://kevinpollet.dev",
+  "private": true,
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": "github:kevinpollet/kevinpollet.dev",
+  "bugs": "https://github.com/gatsbyjs/gatsby/issues",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write 'src/**/*.{js,jsx}' '*.{js,md,json}'",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "dependencies": {
+    "gatsby": "^2.13.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "husky": "^3.0.0",
+    "lint-staged": "^9.0.2",
+    "prettier": "^1.18.2"
+  },
+  "prettier": {
+    "trailingComma": "es5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,md,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
