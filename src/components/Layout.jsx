@@ -6,16 +6,17 @@
  */
 
 import React from "react";
+import { Helmet } from "react-helmet";
 import { rhythm, scale } from "../utils/typography";
 
-export const Layout = ({ children, siteTitle }) => {
+export const Layout = ({ children, title }) => {
   const header = (
     <h1
       style={{
         ...scale(1.5),
       }}
     >
-      {siteTitle}
+      {title}
     </h1>
   );
 
@@ -28,6 +29,7 @@ export const Layout = ({ children, siteTitle }) => {
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
+      <Helmet title={`${title} ✦ kevinpollet.dev`} />
       <header>{header}</header>
       <hr />
       <main>{children}</main>

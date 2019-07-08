@@ -10,7 +10,7 @@ import React from "react";
 import { Layout } from "../components/Layout";
 
 export default ({ data }) => (
-  <Layout siteTitle={data.site.siteMetadata.title}>Content</Layout>
+  <Layout title={data.site.siteMetadata.title}>Content</Layout>
 );
 
 export const pageQuery = graphql`

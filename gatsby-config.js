@@ -9,5 +9,5 @@ module.exports = {
   siteMetadata: {
     title: "Kevin Pollet",
   },
-  plugins: ["gatsby-plugin-typography"],
+  plugins: ["gatsby-plugin-typography", "gatsby-plugin-react-helmet"],
 };
