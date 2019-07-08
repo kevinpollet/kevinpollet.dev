@@ -1,9 +1,13 @@
 /**
- * Configure your Gatsby site with this file.
+ * Copyright © 2019 kevinpollet <pollet.kevin@gmail.com>`
  *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE.md file.
  */
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: "Kevin Pollet",
+  },
+  plugins: ["gatsby-plugin-typography"],
 };
