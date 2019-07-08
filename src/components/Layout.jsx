@@ -9,19 +9,23 @@ import { useStaticQuery, graphql } from "gatsby";
 import React from "react";
 import { Helmet } from "react-helmet";
 import { rhythm, scale } from "../utils/typography";
+import { Bio } from "./Bio.jsx";
 
 export const Layout = ({ children, title }) => {
   const data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
-          title
+          author
+          social {
+            gravatar
+          }
         }
       }
     }
   `);
 
-  const resolvedTitle = title || data.site.siteMetadata.title;
+  const resolvedTitle = title || data.site.siteMetadata.author;
 
   return (
     <div
@@ -34,8 +38,18 @@ export const Layout = ({ children, title }) => {
     >
       <Helmet title={`${resolvedTitle} ✦ kevinpollet.dev`} />
 
-      <header>
-        <h1 style={{ ...scale(1.5) }}>{resolvedTitle}</h1>
+      <header style={{ textAlign: "center" }}>
+        <img
+          style={{
+            borderRadius: 100,
+            border: "solid 1px blue",
+            width: 120,
+          }}
+          alt={data.site.siteMetadata.author}
+          src={`https://www.gravatar.com/avatar/${data.site.siteMetadata.social.gravatar}?s=300`}
+        />
+        <h1 style={{ ...scale(1.5), marginTop: 0 }}>{resolvedTitle}</h1>
+        <Bio />
       </header>
 
       <hr />

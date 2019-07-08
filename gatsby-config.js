@@ -7,7 +7,13 @@
 
 module.exports = {
   siteMetadata: {
-    title: "Kevin Pollet",
+    author: "Kevin Pollet",
+    siteUrl: "https://kevinpollet.dev",
+    social: {
+      twitter: "kevinpollet",
+      gitHub: "kevinpollet",
+      gravatar: "dcdbda4ef9acf7beb39bc8779fbdb492",
+    },
   },
   plugins: ["gatsby-plugin-typography", "gatsby-plugin-react-helmet"],
 };
