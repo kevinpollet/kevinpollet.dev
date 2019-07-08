@@ -15,5 +15,12 @@ module.exports = {
       gravatar: "dcdbda4ef9acf7beb39bc8779fbdb492",
     },
   },
-  plugins: ["gatsby-plugin-typography", "gatsby-plugin-react-helmet"],
+  plugins: [
+    "gatsby-plugin-typography",
+    "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: { name: "content", path: `${__dirname}/content` },
+    },
+  ],
 };
