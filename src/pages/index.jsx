@@ -21,7 +21,7 @@ export default ({ data }) => {
       <div style={{ display: "flex", flexDirection: "column" }}>
         {posts.map(post => (
           <div style={{ padding: `${rhythm(0.3)} 0` }}>
-            <Link style={{ textDecoration: "none" }}>
+            <Link style={{ textDecoration: "none" }} to={post.frontmatter.path}>
               <h2 style={{ ...scale(0.8), marginBottom: rhythm(1 / 8) }}>
                 {post.frontmatter.title}
               </h2>
@@ -54,6 +54,7 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMM DD, Y")
             description
+            path
           }
         }
       }

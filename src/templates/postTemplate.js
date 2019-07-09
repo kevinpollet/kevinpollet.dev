@@ -6,19 +6,20 @@
  */
 
 import React from "react";
+import { Layout } from "../components/Layout";
 
 export default ({ data }) => {
   const { markdownRemark } = data; // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark;
 
   return (
-    <div>
+    <Layout>
       <div>
         <h1>{frontmatter.title}</h1>
         <h2>{frontmatter.date}</h2>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
-    </div>
+    </Layout>
   );
 };
 
