@@ -8,11 +8,11 @@
 module.exports = {
   siteMetadata: {
     author: "Kevin Pollet",
+    email: "pollet.kevin@gmail.com",
     siteUrl: "https://kevinpollet.dev",
     social: {
-      twitter: "kevinpollet",
+      twitter: "@kevinpollet",
       gitHub: "kevinpollet",
-      gravatar: "dcdbda4ef9acf7beb39bc8779fbdb492",
     },
   },
   plugins: [
@@ -22,5 +22,6 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: { name: "content", path: `${__dirname}/content` },
     },
+    "gatsby-transformer-remark",
   ],
 };
