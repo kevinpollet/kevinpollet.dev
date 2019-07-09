@@ -7,34 +7,40 @@
 
 import { graphql, Link } from "gatsby";
 import React from "react";
-import { Bio } from "../components/Bio";
 import { Layout } from "../components/Layout";
 import { rhythm, scale } from "../utils/typography";
 
-export default ({ data }) => {
-  const posts = data.allMarkdownRemark.edges.map(elt => elt.node);
+export default ({ data, location }) => {
+  const sushi = n => str => {
+    let result = "";
+    for (let i = 0; i < n; i++) {
+      result += str;
+    }
+    return result;
+  };
+
+  const posts = data.allMarkdownRemark.edges
+    .map(elt => elt.node)
+    .map(post => (
+      <div style={{ paddingBottom: rhythm(1) }}>
+        <Link to={post.frontmatter.path}>
+          <h2 style={{ marginBottom: 0 }}>{post.frontmatter.title}</h2>
+        </Link>
+
+        <small style={{ ...scale(0), opacity: 0.8 }}>
+          {post.frontmatter.date} ✦ {sushi(post.timeToRead)("🍣")}{" "}
+          {post.timeToRead} min read
+        </small>
+
+        <p style={{ marginTop: rhythm(1 / 2) }}>
+          {post.frontmatter.description}
+        </p>
+      </div>
+    ));
 
   return (
-    <Layout title={data.site.siteMetadata.author}>
-      <Bio />
-      <hr />
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        {posts.map(post => (
-          <div style={{ padding: `${rhythm(0.3)} 0` }}>
-            <Link style={{ textDecoration: "none" }} to={post.frontmatter.path}>
-              <h2 style={{ ...scale(0.8), marginBottom: rhythm(1 / 8) }}>
-                {post.frontmatter.title}
-              </h2>
-            </Link>
-            <small>
-              {post.frontmatter.date} ✦ {post.timeToRead} min read
-            </small>
-            <p style={{ marginTop: rhythm(1 / 2) }}>
-              {post.frontmatter.description}
-            </p>
-          </div>
-        ))}
-      </div>
+    <Layout title={data.site.siteMetadata.author} location={location}>
+      <div style={{ display: "flex", flexDirection: "column" }}>{posts}</div>
     </Layout>
   );
 };

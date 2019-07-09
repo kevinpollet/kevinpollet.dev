@@ -5,19 +5,38 @@
  * found in the LICENSE.md file.
  */
 
+import { graphql, Link } from "gatsby";
 import React from "react";
 import { Layout } from "../components/Layout";
+import { rhythm } from "../utils/typography";
 
-export default ({ data }) => {
-  const { markdownRemark } = data; // data.markdownRemark holds our post data
+export default ({ data, location, pageContext }) => {
+  const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
+  const { previous, next } = pageContext;
 
   return (
-    <Layout>
-      <div>
-        <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+    <Layout title={frontmatter.title} location={location}>
+      <div dangerouslySetInnerHTML={{ __html: html }} />
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          marginTop: rhythm(3),
+        }}
+      >
+        {previous && (
+          <Link style={{ marginRight: "auto" }} to={previous.frontmatter.path}>
+            <h3>← {previous.frontmatter.title}</h3>
+          </Link>
+        )}
+        {next && (
+          <Link style={{ marginLeft: "auto" }} to={next.frontmatter.path}>
+            <h3>{next.frontmatter.title} →</h3>
+          </Link>
+        )}
       </div>
     </Layout>
   );

@@ -6,19 +6,17 @@
  */
 
 import { useStaticQuery, graphql } from "gatsby";
-import md5 from "md5";
 import React from "react";
 import { rhythm } from "../utils/typography";
+import avatar from "../assets/avatar.jpg";
 
 export const Bio = () => {
-  const {
-    site: { siteMetadata },
-  } = useStaticQuery(
+  const data = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
-            email
+            author
           }
         }
       }
@@ -34,8 +32,8 @@ export const Bio = () => {
       }}
     >
       <img
-        alt={siteMetadata.author}
-        src={`https://www.gravatar.com/avatar/${md5(siteMetadata.email)}?s=200`}
+        alt={data.site.siteMetadata.author}
+        src={avatar}
         style={{
           width: rhythm(2.8),
           height: rhythm(2.8),
@@ -45,7 +43,7 @@ export const Bio = () => {
         }}
       />
       <p style={{ marginBottom: 0 }}>
-        ✦ Software Tech Lead @hl2 <br />
+        ✦ Software Engineer <br />
         ✦ Java, TypeScript, Go, Node.js, Docker, AWS <br />✦ OSS ❤
       </p>
     </div>

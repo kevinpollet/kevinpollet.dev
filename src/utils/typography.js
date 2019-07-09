@@ -6,9 +6,9 @@
  */
 
 import Typography from "typography";
-import wordpress2016Theme from "typography-theme-wordpress-2016";
+import gitHubTheme from "typography-theme-github";
 
-const typography = new Typography(wordpress2016Theme);
+const typography = new Typography(gitHubTheme);
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {

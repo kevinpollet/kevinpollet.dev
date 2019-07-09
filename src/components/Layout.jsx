@@ -5,31 +5,51 @@
  * found in the LICENSE.md file.
  */
 
+import { Link } from "gatsby";
 import React from "react";
 import { Helmet } from "react-helmet";
+import { Bio } from "./Bio";
 import { rhythm, scale } from "../utils/typography";
 
-export const Layout = ({ children, title }) => {
+export const Layout = ({ children, location, title }) => {
+  const isHomePage = location.pathname === "/";
+  const backLink = isHomePage ? null : (
+    <Link to="/">
+      <h3>← Back</h3>
+    </Link>
+  );
+
   return (
     <div
       style={{
         marginLeft: "auto",
         marginRight: "auto",
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+        maxWidth: rhythm(30),
+        padding: `${rhythm(1)} ${rhythm(3 / 4)}`,
       }}
     >
       <Helmet title={`${title} ✦ kevinpollet.dev`} />
 
-      <header>
-        <h1 style={{ ...scale(1.5), marginTop: 0 }}>{title}</h1>
+      {backLink}
+
+      <header
+        style={{
+          marginTop: rhythm(1),
+          borderBottom: "1px solid hsla(0,0%,0%,0.07)",
+        }}
+      >
+        <h1 style={{ ...scale(2) }}>{title}</h1>
+        {isHomePage ? <Bio /> : ""}
       </header>
 
-      <main>{children}</main>
-
-      <footer style={{ marginTop: rhythm(1) }}>
-        © {new Date().getFullYear()}, kevinpollet
-      </footer>
+      <main
+        style={{
+          paddingTop: rhythm(1.5),
+          paddingBottom: rhythm(1.5),
+        }}
+      >
+        {children}
+      </main>
     </div>
   );
 };

@@ -21,6 +21,7 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             frontmatter {
+              title
               path
             }
           }
@@ -32,11 +33,21 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors);
     }
 
-    return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    const { edges } = result.data.allMarkdownRemark;
+
+    return edges.forEach(({ node }, index) => {
+      const previous =
+        index !== edges.length - 1 ? edges[index + 1].node : undefined;
+
+      const next = index !== 0 ? edges[index - 1].node : undefined;
+
       createPage({
         path: node.frontmatter.path,
         component: postTemplate,
-        context: {}, // additional data can be passed via context
+        context: {
+          previous,
+          next,
+        },
       });
     });
   });
