@@ -15,7 +15,7 @@ export const Layout = ({ children, location, title }) => {
   const isHomePage = location.pathname === "/";
   const backLink = isHomePage ? null : (
     <Link to="/">
-      <h3>← Back</h3>
+      <h3>← Posts</h3>
     </Link>
   );
 
