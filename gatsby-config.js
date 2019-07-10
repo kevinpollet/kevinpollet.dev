@@ -15,11 +15,27 @@ module.exports = {
     },
   },
   plugins: [
-    "gatsby-plugin-typography",
-    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-source-filesystem",
       options: { name: "content", path: `${__dirname}/content` },
     },
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              linkImagesToOriginal: false,
+              maxWidth: 741,
+            },
+          },
+          "gatsby-remark-copy-linked-files",
+        ],
+      },
+    },
+    "gatsby-plugin-typography",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sharp",
   ],
 };
