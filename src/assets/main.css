@@ -5,8 +5,7 @@
  * found in the LICENSE.md file.
  */
 
-a,
-a span {
+a {
   color: #27ae60;
   text-decoration: none;
   opacity: 0.8;
@@ -15,4 +14,8 @@ a span {
 a:hover {
   opacity: 1;
   text-decoration: underline;
+}
+
+.gatsby-highlight pre {
+  border-radius: 3px;
 }

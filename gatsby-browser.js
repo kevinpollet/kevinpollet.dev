@@ -6,3 +6,4 @@
  */
 
 import "./src/assets/main.css";
+import "prismjs/themes/prism-tomorrow.css";
