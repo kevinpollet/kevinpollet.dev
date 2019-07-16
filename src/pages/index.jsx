@@ -40,7 +40,7 @@ export default ({ data, location }) => {
     ));
 
   return (
-    <Layout title={data.site.siteMetadata.title} location={location}>
+    <Layout location={location}>
       <SEO />
       <div style={{ display: "flex", flexDirection: "column" }}>{posts}</div>
     </Layout>
@@ -49,11 +49,6 @@ export default ({ data, location }) => {
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {

@@ -8,10 +8,10 @@
 import { useStaticQuery, graphql } from "gatsby";
 import React from "react";
 import { rhythm } from "../utils/typography";
-import avatar from "../assets/avatar.jpg";
+import kevinpollet from "../assets/kevinpollet.jpg";
 
 export const Bio = () => {
-  const data = useStaticQuery(
+  const { site } = useStaticQuery(
     graphql`
       query {
         site {
@@ -32,8 +32,8 @@ export const Bio = () => {
       }}
     >
       <img
-        alt={data.site.siteMetadata.author}
-        src={avatar}
+        alt={site.siteMetadata.author}
+        src={kevinpollet}
         style={{
           width: rhythm(2.8),
           height: rhythm(2.8),

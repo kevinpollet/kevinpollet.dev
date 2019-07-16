@@ -10,7 +10,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 
 export const SEO = ({ title, description }) => {
-  const data = useStaticQuery(graphql`
+  const { site } = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
@@ -22,8 +22,8 @@ export const SEO = ({ title, description }) => {
     }
   `);
 
-  const resolvedTitle = title || data.site.siteMetadata.title;
-  const resolvedDescription = description || data.site.siteMetadata.description;
+  const resolvedTitle = title || site.siteMetadata.title;
+  const resolvedDescription = description || site.siteMetadata.description;
 
   return (
     <Helmet
@@ -53,7 +53,7 @@ export const SEO = ({ title, description }) => {
         },
         {
           name: "twitter:creator",
-          content: data.site.siteMetadata.author,
+          content: site.siteMetadata.author,
         },
       ]}
     />

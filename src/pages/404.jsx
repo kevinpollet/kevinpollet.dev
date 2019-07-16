@@ -7,9 +7,11 @@
 
 import React from "react";
 import { Layout } from "../components/Layout";
+import { SEO } from "../components/SEO";
 
 export default () => (
   <Layout>
+    <SEO title="404" description="Oops, something went wrong" />
     <div>404</div>
   </Layout>
 );

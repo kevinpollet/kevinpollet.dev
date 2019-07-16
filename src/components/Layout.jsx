@@ -5,18 +5,22 @@
  * found in the LICENSE.md file.
  */
 
-import { Link } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
 import React from "react";
 import { Bio } from "./Bio";
 import { rhythm, scale } from "../utils/typography";
 
 export const Layout = ({ children, location, title }) => {
   const isHomePage = location.pathname === "/";
-  const postsLink = isHomePage ? null : (
-    <Link to="/">
-      <h3>← Posts</h3>
-    </Link>
-  );
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
 
   return (
     <div
@@ -27,7 +31,11 @@ export const Layout = ({ children, location, title }) => {
         padding: `${rhythm(1)} ${rhythm(3 / 4)}`,
       }}
     >
-      {postsLink}
+      {isHomePage ? null : (
+        <Link to="/">
+          <h3>← Posts</h3>
+        </Link>
+      )}
 
       <header
         style={{
@@ -35,8 +43,8 @@ export const Layout = ({ children, location, title }) => {
           borderBottom: "1px solid hsla(0,0%,0%,0.07)",
         }}
       >
-        <h1 style={{ ...scale(2) }}>{title}</h1>
-        {isHomePage ? <Bio /> : ""}
+        <h1 style={{ ...scale(2) }}>{title || site.siteMetadata.title}</h1>
+        {isHomePage ? <Bio /> : null}
       </header>
 
       <main
