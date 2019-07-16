@@ -7,7 +7,9 @@
 
 module.exports = {
   siteMetadata: {
+    title: "Kevin Pollet",
     author: "Kevin Pollet",
+    description: "Blog posts by Kevin Pollet",
     siteUrl: "https://kevinpollet.dev",
     social: {
       twitter: "@kevinpollet",

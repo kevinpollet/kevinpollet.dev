@@ -9,6 +9,7 @@ import { graphql, Link } from "gatsby";
 import React from "react";
 import { Layout } from "../components/Layout";
 import { rhythm, scale } from "../utils/typography";
+import { SEO } from "../components/SEO";
 
 export default ({ data, location }) => {
   const sushi = n => str => {
@@ -39,7 +40,8 @@ export default ({ data, location }) => {
     ));
 
   return (
-    <Layout title={data.site.siteMetadata.author} location={location}>
+    <Layout title={data.site.siteMetadata.title} location={location}>
+      <SEO />
       <div style={{ display: "flex", flexDirection: "column" }}>{posts}</div>
     </Layout>
   );
@@ -49,7 +51,7 @@ export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
-        author
+        title
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {

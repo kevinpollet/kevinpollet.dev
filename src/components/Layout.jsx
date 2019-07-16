@@ -7,13 +7,12 @@
 
 import { Link } from "gatsby";
 import React from "react";
-import { Helmet } from "react-helmet";
 import { Bio } from "./Bio";
 import { rhythm, scale } from "../utils/typography";
 
 export const Layout = ({ children, location, title }) => {
   const isHomePage = location.pathname === "/";
-  const backLink = isHomePage ? null : (
+  const postsLink = isHomePage ? null : (
     <Link to="/">
       <h3>← Posts</h3>
     </Link>
@@ -28,9 +27,7 @@ export const Layout = ({ children, location, title }) => {
         padding: `${rhythm(1)} ${rhythm(3 / 4)}`,
       }}
     >
-      <Helmet title={`${title} ✦ kevinpollet.dev`} />
-
-      {backLink}
+      {postsLink}
 
       <header
         style={{

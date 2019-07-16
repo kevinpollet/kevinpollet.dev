@@ -8,6 +8,7 @@
 import { graphql, Link } from "gatsby";
 import React from "react";
 import { Layout } from "../components/Layout";
+import { SEO } from "../components/SEO";
 import { rhythm } from "../utils/typography";
 
 export default ({ data, location, pageContext }) => {
@@ -17,6 +18,8 @@ export default ({ data, location, pageContext }) => {
 
   return (
     <Layout title={frontmatter.title} location={location}>
+      <SEO title={frontmatter.title} description={frontmatter.description} />
+
       <div dangerouslySetInnerHTML={{ __html: html }} />
 
       <div
@@ -50,6 +53,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        description
       }
     }
   }
