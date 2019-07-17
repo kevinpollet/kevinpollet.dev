@@ -5,5 +5,5 @@
  * found in the LICENSE.md file.
  */
 
-import "./src/assets/main.css";
 import "prismjs/themes/prism-tomorrow.css";
+import "./src/assets/main.css";

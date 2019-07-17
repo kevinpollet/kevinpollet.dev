@@ -9,6 +9,8 @@ import { useStaticQuery, graphql } from "gatsby";
 import React from "react";
 import { rhythm } from "../utils/typography";
 import kevinpollet from "../assets/kevinpollet.jpg";
+import twitter from "../assets/twitter.png";
+import github from "../assets/github.png";
 
 export const Bio = () => {
   const { site } = useStaticQuery(
@@ -17,6 +19,10 @@ export const Bio = () => {
         site {
           siteMetadata {
             author
+            social {
+              twitter
+              gitHub
+            }
           }
         }
       }
@@ -46,6 +52,45 @@ export const Bio = () => {
         ✦ Software Engineer <br />
         ✦ Java, TypeScript, Go, Node.js, Docker, AWS <br />✦ OSS ❤
       </p>
+
+      <ul
+        style={{
+          listStyle: "none",
+          marginBottom: 0,
+          marginLeft: "auto",
+        }}
+      >
+        <li>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <img
+              alt="Twitter icon"
+              style={{ marginBottom: 0, marginRight: 10 }}
+              src={twitter}
+              width="30"
+              height="30"
+            />
+            <a href={`https://twitter.com/${site.siteMetadata.social.twitter}`}>
+              Twitter
+            </a>
+          </div>
+        </li>
+        <li>
+          <div
+            style={{ display: "flex", alignItems: "center", marginBottom: 0 }}
+          >
+            <img
+              alt="GitHub icon"
+              style={{ marginBottom: 0, marginRight: 10 }}
+              src={github}
+              width="30"
+              height="30"
+            />
+            <a href={`https://github.com/${site.siteMetadata.social.gitHub}`}>
+              GitHub
+            </a>
+          </div>
+        </li>
+      </ul>
     </div>
   );
 };
