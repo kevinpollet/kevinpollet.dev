@@ -40,5 +40,15 @@ module.exports = {
     "gatsby-plugin-typography",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-plugin-postcss",
+      options: {
+        postCssPlugins: [
+          require("postcss-preset-env")({
+            features: { "nesting-rules": true },
+          }),
+        ],
+      },
+    },
   ],
 };
