@@ -12,24 +12,16 @@ import { rhythm, scale } from "../utils/typography";
 import { SEO } from "../components/SEO";
 
 export default ({ data, location }) => {
-  const sushi = n => str => {
-    let result = "";
-    for (let i = 0; i < n; i++) {
-      result += str;
-    }
-    return result;
-  };
-
   const posts = data.allMarkdownRemark.edges
     .map(elt => elt.node)
     .map(post => (
-      <div style={{ paddingBottom: rhythm(1) }}>
-        <Link to={post.frontmatter.path}>
-          <h2 style={{ marginBottom: 0 }}>{post.frontmatter.title}</h2>
-        </Link>
+      <div style={{ padding: `${rhythm(1 / 3)} 0` }}>
+        <h2 style={{ marginBottom: 0 }}>
+          <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
+        </h2>
 
-        <small style={{ ...scale(0), opacity: 0.8 }}>
-          {post.frontmatter.date} ✦ {sushi(post.timeToRead)("🍣")}{" "}
+        <small style={{ ...scale(0), opacity: 0.7 }}>
+          {post.frontmatter.date} ✦ {new Array(post.timeToRead + 1).join("🍣")}{" "}
           {post.timeToRead} min read
         </small>
 
@@ -42,7 +34,7 @@ export default ({ data, location }) => {
   return (
     <Layout location={location}>
       <SEO />
-      <div style={{ display: "flex", flexDirection: "column" }}>{posts}</div>
+      {posts}
     </Layout>
   );
 };

@@ -25,36 +25,24 @@ export const Layout = ({ children, location, title }) => {
   return (
     <div
       style={{
-        marginLeft: "auto",
-        marginRight: "auto",
+        margin: "0 auto",
         maxWidth: rhythm(30),
-        padding: `${rhythm(1)} ${rhythm(3 / 4)}`,
+        padding: `${rhythm(1)} ${rhythm(1 / 2)}`,
       }}
     >
-      {isHomePage ? null : (
-        <Link to="/">
-          <h3>← Posts</h3>
-        </Link>
-      )}
+      <header style={{ borderBottom: "1px solid hsla(0,0%,0%,0.07)" }}>
+        {isHomePage ? null : (
+          <h3 style={{ marginBottom: 0, paddingBottom: rhythm(3 / 2) }}>
+            <Link to="/">← Posts</Link>
+          </h3>
+        )}
 
-      <header
-        style={{
-          marginTop: rhythm(1),
-          borderBottom: "1px solid hsla(0,0%,0%,0.07)",
-        }}
-      >
         <h1 style={{ ...scale(2) }}>{title || site.siteMetadata.title}</h1>
+
         {isHomePage ? <Bio /> : null}
       </header>
 
-      <main
-        style={{
-          paddingTop: rhythm(1.5),
-          paddingBottom: rhythm(1.5),
-        }}
-      >
-        {children}
-      </main>
+      <main style={{ padding: `${rhythm(3 / 2)} 0` }}>{children}</main>
     </div>
   );
 };

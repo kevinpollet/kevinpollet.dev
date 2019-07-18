@@ -27,18 +27,20 @@ export default ({ data, location, pageContext }) => {
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          marginTop: rhythm(3),
+          paddingTop: rhythm(3 / 2),
         }}
       >
         {previous && (
-          <Link style={{ marginRight: "auto" }} to={previous.frontmatter.path}>
-            <h3>← {previous.frontmatter.title}</h3>
-          </Link>
+          <h3 style={{ marginBottom: 0, marginRight: "auto" }}>
+            <Link to={previous.frontmatter.path}>
+              ← {previous.frontmatter.title}
+            </Link>
+          </h3>
         )}
         {next && (
-          <Link style={{ marginLeft: "auto" }} to={next.frontmatter.path}>
-            <h3>{next.frontmatter.title} →</h3>
-          </Link>
+          <h3 style={{ marginBottom: 0, marginLeft: "auto" }}>
+            <Link to={next.frontmatter.path}>{next.frontmatter.title} →</Link>
+          </h3>
         )}
       </div>
     </Layout>

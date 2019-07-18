@@ -8,9 +8,10 @@
 import { useStaticQuery, graphql } from "gatsby";
 import React from "react";
 import { rhythm } from "../utils/typography";
-import kevinpollet from "../assets/kevinpollet.jpg";
-import twitter from "../assets/twitter.png";
-import github from "../assets/github.png";
+import avatar from "../assets/avatar.jpg";
+import twitterIcon from "../assets/twitter-icon.png";
+import githubIcon from "../assets/github-icon.png";
+import { SocialLink } from "./SocialLink";
 
 export const Bio = () => {
   const { site } = useStaticQuery(
@@ -39,7 +40,7 @@ export const Bio = () => {
     >
       <img
         alt={site.siteMetadata.author}
-        src={kevinpollet}
+        src={avatar}
         style={{
           width: rhythm(2.8),
           height: rhythm(2.8),
@@ -53,44 +54,20 @@ export const Bio = () => {
         ✦ Java, TypeScript, Go, Node.js, Docker, AWS <br />✦ OSS ❤
       </p>
 
-      <ul
-        style={{
-          listStyle: "none",
-          marginBottom: 0,
-          marginLeft: "auto",
-        }}
-      >
-        <li>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <img
-              alt="Twitter icon"
-              style={{ marginBottom: 0, marginRight: 10 }}
-              src={twitter}
-              width="30"
-              height="30"
-            />
-            <a href={`https://twitter.com/${site.siteMetadata.social.twitter}`}>
-              Twitter
-            </a>
-          </div>
-        </li>
-        <li>
-          <div
-            style={{ display: "flex", alignItems: "center", marginBottom: 0 }}
-          >
-            <img
-              alt="GitHub icon"
-              style={{ marginBottom: 0, marginRight: 10 }}
-              src={github}
-              width="30"
-              height="30"
-            />
-            <a href={`https://github.com/${site.siteMetadata.social.gitHub}`}>
-              GitHub
-            </a>
-          </div>
-        </li>
-      </ul>
+      <div style={{ marginLeft: "auto" }}>
+        <SocialLink
+          imgSrc={twitterIcon}
+          to={`https://twitter.com/${site.siteMetadata.social.twitter}`}
+        >
+          Twitter
+        </SocialLink>
+        <SocialLink
+          imgSrc={githubIcon}
+          to={`https://github.com/${site.siteMetadata.social.gitHub}`}
+        >
+          GitHub
+        </SocialLink>
+      </div>
     </div>
   );
 };
