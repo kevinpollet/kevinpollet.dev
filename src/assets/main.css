@@ -16,7 +16,28 @@ a {
   }
 }
 
+.bio {
+  display: flex;
+
+  & .social-links {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+  }
+}
+
 .gatsby-highlight pre[class*="language-"] {
   border-radius: 2px;
   overflow: initial;
+}
+
+@media screen and (max-width: 600px) {
+  .bio {
+    flex-direction: column;
+
+    & .social-links {
+      margin-top: 10px;
+      margin-left: 0;
+    }
+  }
 }

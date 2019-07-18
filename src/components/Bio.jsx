@@ -31,30 +31,26 @@ export const Bio = () => {
   );
 
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        marginBottom: rhythm(1 / 2),
-      }}
-    >
-      <img
-        alt={site.siteMetadata.author}
-        src={avatar}
-        style={{
-          width: rhythm(2.8),
-          height: rhythm(2.8),
-          borderRadius: 50,
-          marginBottom: 0,
-          marginRight: rhythm(1 / 2),
-        }}
-      />
-      <p style={{ marginBottom: 0 }}>
-        ✦ Software Engineer <br />
-        ✦ Java, TypeScript, Go, Node.js, Docker, AWS <br />✦ OSS ❤
-      </p>
+    <div className="bio">
+      <div style={{ display: "flex" }}>
+        <img
+          alt={site.siteMetadata.author}
+          src={avatar}
+          style={{
+            width: rhythm(2.8),
+            height: rhythm(2.8),
+            borderRadius: 50,
+            marginBottom: 0,
+            marginRight: rhythm(1 / 2),
+          }}
+        />
+        <p style={{ marginBottom: 0 }}>
+          ✦ Software Engineer <br />
+          ✦ OSS ❤<br />✦ Java, TypeScript, Go, Node.js, Docker, AWS
+        </p>
+      </div>
 
-      <div style={{ marginLeft: "auto" }}>
+      <div className="social-links">
         <SocialLink
           imgSrc={twitterIcon}
           to={`https://twitter.com/${site.siteMetadata.social.twitter}`}

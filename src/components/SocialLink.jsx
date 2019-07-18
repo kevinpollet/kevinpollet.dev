@@ -13,7 +13,7 @@ export const SocialLink = ({ children, to, imgSrc }) => (
     style={{
       display: "flex",
       alignItems: "center",
-      padding: `${rhythm(1 / 5)} 0`,
+      padding: `${rhythm(1 / 5)}`,
     }}
   >
     <img

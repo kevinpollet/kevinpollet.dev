@@ -27,10 +27,15 @@ export const Layout = ({ children, location, title }) => {
       style={{
         margin: "0 auto",
         maxWidth: rhythm(30),
-        padding: `${rhythm(1)} ${rhythm(1 / 2)}`,
+        padding: `${rhythm(1 / 2)} ${rhythm(1 / 2)}`,
       }}
     >
-      <header style={{ borderBottom: "1px solid hsla(0,0%,0%,0.07)" }}>
+      <header
+        style={{
+          borderBottom: "1px solid hsla(0,0%,0%,0.07)",
+          padding: `${rhythm(1 / 2)} 0`,
+        }}
+      >
         {isHomePage ? null : (
           <h3 style={{ marginBottom: 0, paddingBottom: rhythm(3 / 2) }}>
             <Link to="/">← Posts</Link>
