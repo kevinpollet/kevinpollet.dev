@@ -27,7 +27,7 @@ export const Layout = ({ children, location, title }) => {
       style={{
         margin: "0 auto",
         maxWidth: rhythm(30),
-        padding: `${rhythm(1 / 2)} ${rhythm(1 / 2)}`,
+        padding: `${rhythm(1 / 2)} 0`,
       }}
     >
       <header
@@ -48,6 +48,23 @@ export const Layout = ({ children, location, title }) => {
       </header>
 
       <main style={{ padding: `${rhythm(3 / 2)} 0` }}>{children}</main>
+
+      <footer>
+        <ul
+          style={{
+            borderTop: "1px solid hsla(0,0%,0%,0.07)",
+            listStyleType: "none",
+            margin: 0,
+            padding: `${rhythm(1 / 2)} 0`,
+          }}
+        >
+          <li>
+            Built with <Link to="https://www.gatsbyjs.org/">Gatsby</Link> and
+            deployed on <Link to="https://www.netlify.com/">Netlify</Link>
+          </li>
+          <li>© {new Date().getFullYear()}, kevinpollet</li>
+        </ul>
+      </footer>
     </div>
   );
 };
