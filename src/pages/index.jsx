@@ -27,7 +27,7 @@ export default ({ data, location }) => {
           <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
         </h2>
 
-        <small style={{ ...scale(-1 / 5), opacity: 0.8 }}>
+        <small style={{ ...scale(-1 / 5) }}>
           {post.frontmatter.date} ✦ 🍱 {post.timeToRead} min read
         </small>
 
