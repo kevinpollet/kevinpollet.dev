@@ -16,12 +16,19 @@ export default ({ data, location }) => {
     .map(elt => elt.node)
     .map(post => (
       <div style={{ padding: `${rhythm(1 / 3)} 0` }}>
-        <h2 style={{ marginBottom: 0 }}>
+        <h2
+          style={{
+            marginBottom: 0,
+            fontFamily: "Lora",
+            fontStyle: "italic",
+            ...scale(0.8),
+          }}
+        >
           <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
         </h2>
 
-        <small style={{ ...scale(0), opacity: 0.7 }}>
-          {post.frontmatter.date} ✦ {post.timeToRead} min read
+        <small style={{ ...scale(-1 / 5), opacity: 0.8 }}>
+          {post.frontmatter.date} ✦ 🍱 {post.timeToRead} min read
         </small>
 
         <p style={{ marginTop: rhythm(1 / 2) }}>

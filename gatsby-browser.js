@@ -5,5 +5,6 @@
  * found in the LICENSE.md file.
  */
 
+import "typeface-lora";
 import "prismjs/themes/prism-tomorrow.css";
 import "./src/assets/main.css";
