@@ -9,7 +9,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write 'src/**/*.{js,jsx}' '*.{js,md,json}'",
+    "format": "prettier --write 'src/**/*.{css,js,jsx}' '*.{js,md,json}'",
     "start": "npm run develop",
     "serve": "gatsby serve"
   },
@@ -43,7 +43,7 @@
     "trailingComma": "es5"
   },
   "lint-staged": {
-    "*.{js,jsx,md,json}": [
+    "*.{css,js,jsx,md,json}": [
       "prettier --write",
       "git add"
     ]
