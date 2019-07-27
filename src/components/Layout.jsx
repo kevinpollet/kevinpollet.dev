@@ -59,8 +59,15 @@ export const Layout = ({ children, location, title }) => {
           }}
         >
           <li>
+            Found a typo or a bug? Submit an{" "}
+            <a href="https://github.com/kevinpollet/kevinpollet.dev/issues/new">
+              issue
+            </a>
+            .
+          </li>
+          <li>
             Built with <Link to="https://www.gatsbyjs.org/">Gatsby</Link> and
-            deployed on <Link to="https://www.netlify.com/">Netlify</Link>
+            deployed on <Link to="https://www.netlify.com/">Netlify</Link>.
           </li>
           <li>© {new Date().getFullYear()}, kevinpollet</li>
         </ul>
