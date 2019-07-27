@@ -21,8 +21,7 @@ export default ({ data, location }) => {
         </h2>
 
         <small style={{ ...scale(0), opacity: 0.7 }}>
-          {post.frontmatter.date} ✦ {new Array(post.timeToRead + 1).join("🍣")}{" "}
-          {post.timeToRead} min read
+          {post.frontmatter.date} ✦ {post.timeToRead} min read
         </small>
 
         <p style={{ marginTop: rhythm(1 / 2) }}>
