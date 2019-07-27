@@ -5,12 +5,12 @@
  * found in the LICENSE.md file.
  */
 
-const path = require("path");
+const { resolve } = require("path");
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
-
-  const postTemplate = path.resolve(`src/templates/postTemplate.js`);
+  const postTemplate = resolve(`src/templates/postTemplate.js`);
 
   return graphql(`
     {
@@ -20,9 +20,11 @@ exports.createPages = ({ actions, graphql }) => {
       ) {
         edges {
           node {
+            fields {
+              slug
+            }
             frontmatter {
               title
-              path
             }
           }
         }
@@ -42,13 +44,28 @@ exports.createPages = ({ actions, graphql }) => {
       const next = index !== 0 ? edges[index - 1].node : undefined;
 
       createPage({
-        path: node.frontmatter.path,
+        path: node.fields.slug,
         component: postTemplate,
         context: {
+          slug: node.fields.slug,
           previous,
           next,
         },
       });
     });
   });
+};
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode });
+
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    });
+  }
 };

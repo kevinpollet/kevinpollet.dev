@@ -17,7 +17,7 @@ export default ({ data, location }) => {
     .map(post => (
       <div style={{ padding: `${rhythm(1 / 3)} 0` }}>
         <h2 style={{ marginBottom: 0 }}>
-          <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
+          <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
         </h2>
 
         <small style={{ ...scale(0), opacity: 0.7 }}>
@@ -45,11 +45,13 @@ export const pageQuery = graphql`
       edges {
         node {
           timeToRead
+          fields {
+            slug
+          }
           frontmatter {
             title
             date(formatString: "MMM DD, Y")
             description
-            path
           }
         }
       }

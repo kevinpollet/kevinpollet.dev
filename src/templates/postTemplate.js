@@ -32,14 +32,14 @@ export default ({ data, location, pageContext }) => {
       >
         {previous && (
           <h3 style={{ marginBottom: 0, marginRight: "auto" }}>
-            <Link to={previous.frontmatter.path}>
+            <Link to={previous.fields.slug}>
               ← {previous.frontmatter.title}
             </Link>
           </h3>
         )}
         {next && (
           <h3 style={{ marginBottom: 0, marginLeft: "auto" }}>
-            <Link to={next.frontmatter.path}>{next.frontmatter.title} →</Link>
+            <Link to={next.fields.slug}>{next.frontmatter.title} →</Link>
           </h3>
         )}
       </div>
@@ -48,12 +48,11 @@ export default ({ data, location, pageContext }) => {
 };
 
 export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
-        path
         title
         description
       }
