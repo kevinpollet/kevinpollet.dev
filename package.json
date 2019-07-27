@@ -14,19 +14,19 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "gatsby": "^2.13.27",
+    "gatsby": "^2.13.41",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-postcss": "^2.1.2",
     "gatsby-plugin-react-helmet": "^3.1.2",
-    "gatsby-plugin-sharp": "^2.2.8",
+    "gatsby-plugin-sharp": "^2.2.9",
     "gatsby-plugin-typography": "^2.3.2",
     "gatsby-remark-copy-linked-files": "^2.1.3",
-    "gatsby-remark-images": "^3.1.6",
+    "gatsby-remark-images": "^3.1.7",
     "gatsby-remark-prismjs": "^3.3.3",
-    "gatsby-source-filesystem": "^2.1.5",
-    "gatsby-transformer-remark": "^2.6.6",
+    "gatsby-source-filesystem": "^2.1.6",
+    "gatsby-transformer-remark": "^2.6.9",
     "postcss-preset-env": "^6.7.0",
-    "prismjs": "^1.16.0",
+    "prismjs": "^1.17.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
@@ -35,8 +35,8 @@
     "typography-theme-github": "^0.16.19"
   },
   "devDependencies": {
-    "husky": "^3.0.0",
-    "lint-staged": "^9.2.0",
+    "husky": "^3.0.1",
+    "lint-staged": "^9.2.1",
     "prettier": "^1.18.2"
   },
   "prettier": {
