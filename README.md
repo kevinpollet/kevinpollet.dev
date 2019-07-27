@@ -1,7 +1,7 @@
 # kevinpollet.dev
 
-Site built with [Gatsby](https://www.gatsbyjs.org/). 
-Start the site in development mode with the following commands:
+- Built with [Gatsby](https://www.gatsbyjs.org/)
+- Start the site in development mode with the following commands:
 
 ```shell
 $ npm install
