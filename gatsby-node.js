@@ -65,7 +65,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      value: `posts${postPath}`,
+      value: `/posts${postPath}`,
     });
   }
 };

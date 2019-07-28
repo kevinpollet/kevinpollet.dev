@@ -15,7 +15,7 @@ export default ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
     .map(elt => elt.node)
     .map(post => (
-      <div style={{ padding: `${rhythm(1 / 3)} 0` }}>
+      <div key={post.id} style={{ padding: `${rhythm(1 / 3)} 0` }}>
         <h2
           style={{
             marginBottom: 0,
@@ -50,6 +50,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
+          id
           timeToRead
           fields {
             slug

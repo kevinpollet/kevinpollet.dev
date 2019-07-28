@@ -27,13 +27,16 @@ export const Layout = ({ children, location, title }) => {
       style={{
         margin: "0 auto",
         maxWidth: rhythm(30),
-        padding: `${rhythm(1 / 2)} ${rhythm(1 / 2)}`,
+        padding: `${rhythm(1 / 2)}`,
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
       }}
     >
       <header
         style={{
           borderBottom: "1px solid hsla(0,0%,0%,0.07)",
-          padding: `${rhythm(1 / 2)} 0`,
+          paddingBottom: rhythm(1 / 2),
         }}
       >
         {isHomePage ? null : (
@@ -47,15 +50,18 @@ export const Layout = ({ children, location, title }) => {
         {isHomePage ? <Bio /> : null}
       </header>
 
-      <main style={{ padding: `${rhythm(3 / 2)} 0` }}>{children}</main>
+      <main style={{ padding: `${rhythm(1 / 2)} 0`, flex: 1 }}>{children}</main>
 
-      <footer>
+      <footer
+        style={{
+          borderTop: "1px solid hsla(0,0%,0%,0.07)",
+          paddingTop: rhythm(1 / 2),
+        }}
+      >
         <ul
           style={{
-            borderTop: "1px solid hsla(0,0%,0%,0.07)",
             listStyleType: "none",
             margin: 0,
-            padding: `${rhythm(1 / 2)} 0`,
           }}
         >
           <li>
