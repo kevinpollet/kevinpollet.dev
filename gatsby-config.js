@@ -10,7 +10,7 @@ module.exports = {
     title: "Kevin Pollet",
     author: "Kevin Pollet",
     description: "Blog posts by Kevin Pollet",
-    siteUrl: "https://kevinpollet.dev",
+    siteUrl: "https://inspiring-hermann-b9dd46.netlify.com/",
     social: {
       twitter: "@kevinpollet",
       gitHub: "kevinpollet",
