@@ -10,8 +10,8 @@ import { Layout } from "../components/Layout";
 import { SEO } from "../components/SEO";
 
 export default ({ location }) => (
-  <Layout location={location}>
+  <Layout location={location} title="404">
     <SEO title="404" description="Oops, something went wrong" />
-    <div>404</div>
+    <h2>Sorry, the page you were looking for doesn't exist.</h2>
   </Layout>
 );
