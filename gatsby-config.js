@@ -20,6 +20,13 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
+        name: "images",
+        path: `${__dirname}/src/assets`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
         name: "pages",
         path: `${__dirname}/src/pages`,
       },
@@ -58,6 +65,7 @@ module.exports = {
     },
     "gatsby-plugin-typography",
     "gatsby-plugin-react-helmet",
+    "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     "gatsby-plugin-sitemap",
   ],

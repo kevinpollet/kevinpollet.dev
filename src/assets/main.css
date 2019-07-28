@@ -16,11 +16,29 @@ a {
 
 .bio {
   display: flex;
+  align-items: center;
 
-  & .social-links {
-    display: flex;
-    flex-direction: column;
+  & .description {
+    list-style: none;
+    margin: 0;
+
+    & li {
+      margin: 0;
+    }
+  }
+
+  & .links {
+    margin: 0;
     margin-left: auto;
+    list-style: none;
+
+    & li {
+      display: flex;
+    }
+
+    & :last-child {
+      margin: 0;
+    }
   }
 }
 
@@ -31,10 +49,12 @@ a {
 
 @media screen and (max-width: 600px) {
   .bio {
+    align-items: flex-start;
     flex-direction: column;
 
-    & .social-links {
-      margin-top: 10px;
+    & .links,
+    & .description {
+      margin-top: 20px;
       margin-left: 0;
     }
   }

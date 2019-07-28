@@ -6,17 +6,35 @@
  */
 
 import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
 import React from "react";
 import { rhythm } from "../utils/typography";
-import avatar from "../assets/avatar.jpg";
-import twitterIcon from "../assets/twitter-icon.png";
-import githubIcon from "../assets/github-icon.png";
-import { SocialLink } from "./SocialLink";
 
 export const Bio = () => {
-  const { site } = useStaticQuery(
+  const { site, avatar, twitterIcon, gitHubIcon } = useStaticQuery(
     graphql`
       query {
+        avatar: file(relativePath: { eq: "avatar.jpg" }) {
+          childImageSharp {
+            fixed(width: 70, height: 70) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        twitterIcon: file(relativePath: { eq: "twitter-icon.png" }) {
+          childImageSharp {
+            fixed(width: 26, height: 26) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        gitHubIcon: file(relativePath: { eq: "github-icon.png" }) {
+          childImageSharp {
+            fixed(width: 26, height: 26) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
         site {
           siteMetadata {
             author
@@ -32,38 +50,38 @@ export const Bio = () => {
 
   return (
     <div className="bio">
-      <div style={{ display: "flex" }}>
-        <img
-          alt={site.siteMetadata.author}
-          src={avatar}
-          style={{
-            width: rhythm(2.8),
-            height: rhythm(2.8),
-            borderRadius: 50,
-            marginBottom: 0,
-            marginRight: rhythm(1 / 2),
-          }}
-        />
-        <p style={{ marginBottom: 0 }}>
-          ✦ Software Engineer <br />
-          ✦ Java, TypeScript, Go, Node.js, Docker, AWS <br />✦ OSS ❤
-        </p>
-      </div>
+      <Img
+        style={{ marginRight: rhythm(1 / 2) }}
+        imgStyle={{ borderRadius: 50 }}
+        fixed={avatar.childImageSharp.fixed}
+      />
 
-      <div className="social-links">
-        <SocialLink
-          imgSrc={twitterIcon}
-          to={`https://twitter.com/${site.siteMetadata.social.twitter}`}
-        >
-          Twitter
-        </SocialLink>
-        <SocialLink
-          imgSrc={githubIcon}
-          to={`https://github.com/${site.siteMetadata.social.gitHub}`}
-        >
-          GitHub
-        </SocialLink>
-      </div>
+      <ul className="description">
+        <li>✦ Software Engineer</li>
+        <li>✦ Java, TypeScript, Go, Node.js, Docker, AWS</li>
+        <li>✦ OSS ❤</li>
+      </ul>
+
+      <ul className="links">
+        <li>
+          <Img
+            style={{ marginRight: rhythm(1 / 4) }}
+            fixed={twitterIcon.childImageSharp.fixed}
+          />
+          <a href={`https://twitter.com/${site.siteMetadata.social.twitter}`}>
+            Twitter
+          </a>
+        </li>
+        <li>
+          <Img
+            style={{ marginRight: rhythm(1 / 4) }}
+            fixed={gitHubIcon.childImageSharp.fixed}
+          />
+          <a href={`https://github.com/${site.siteMetadata.social.gitHub}`}>
+            GitHub
+          </a>
+        </li>
+      </ul>
     </div>
   );
 };

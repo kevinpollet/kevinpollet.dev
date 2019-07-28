@@ -64,12 +64,13 @@ export const Layout = ({ children, location, title }) => {
             margin: 0,
           }}
         >
+          <li>Found a typo or a bug?</li>
           <li>
-            Found a typo or a bug? Submit an{" "}
+            Submit an{" "}
             <a href="https://github.com/kevinpollet/kevinpollet.dev/issues/new">
               issue
             </a>{" "}
-            or a{" "}
+            or open a{" "}
             <a href="https://github.com/kevinpollet/kevinpollet.dev/pulls">
               pull request
             </a>
