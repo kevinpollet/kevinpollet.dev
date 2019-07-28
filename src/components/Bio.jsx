@@ -46,7 +46,7 @@ export const Bio = () => {
         />
         <p style={{ marginBottom: 0 }}>
           ✦ Software Engineer <br />
-          ✦ OSS ❤<br />✦ Java, TypeScript, Go, Node.js, Docker, AWS
+          ✦ Java, TypeScript, Go, Node.js, Docker, AWS <br />✦ OSS ❤
         </p>
       </div>
 

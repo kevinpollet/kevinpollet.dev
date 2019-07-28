@@ -62,14 +62,20 @@ export const Layout = ({ children, location, title }) => {
             Found a typo or a bug? Submit an{" "}
             <a href="https://github.com/kevinpollet/kevinpollet.dev/issues/new">
               issue
+            </a>{" "}
+            or a{" "}
+            <a href="https://github.com/kevinpollet/kevinpollet.dev/pulls">
+              pull request
             </a>
             .
           </li>
           <li>
-            Built with <a href="https://www.gatsbyjs.org/">Gatsby</a> and
-            deployed on <a href="https://www.netlify.com/">Netlify</a>.
+            <small>
+              Built with <a href="https://www.gatsbyjs.org/">Gatsby</a> and
+              deployed on <a href="https://www.netlify.com/">Netlify</a>, ©{" "}
+              {new Date().getFullYear()}, kevinpollet
+            </small>
           </li>
-          <li>© {new Date().getFullYear()}, kevinpollet</li>
         </ul>
       </footer>
     </div>
