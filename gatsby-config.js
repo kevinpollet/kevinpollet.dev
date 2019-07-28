@@ -19,7 +19,10 @@ module.exports = {
   plugins: [
     {
       resolve: "gatsby-source-filesystem",
-      options: { name: "pages", path: `${__dirname}/src/pages` },
+      options: {
+        name: "pages",
+        path: `${__dirname}/src/pages`,
+      },
     },
     {
       resolve: "gatsby-transformer-remark",
@@ -37,9 +40,6 @@ module.exports = {
         ],
       },
     },
-    "gatsby-plugin-typography",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sharp",
     {
       resolve: "gatsby-plugin-postcss",
       options: {
@@ -50,5 +50,15 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        policy: [{ userAgent: "*", disallow: "/" }],
+      },
+    },
+    "gatsby-plugin-typography",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-sitemap",
   ],
 };
