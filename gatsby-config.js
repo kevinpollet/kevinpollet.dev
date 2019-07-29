@@ -63,7 +63,12 @@ module.exports = {
         policy: [{ userAgent: "*", disallow: "/" }],
       },
     },
-    "gatsby-plugin-typography",
+    {
+      resolve: "gatsby-plugin-typography",
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",

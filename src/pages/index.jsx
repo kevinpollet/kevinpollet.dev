@@ -16,7 +16,7 @@ export default ({ data, location }) => {
     .map(elt => elt.node)
     .map(post => (
       <div key={post.id} style={{ padding: `${rhythm(1 / 3)} 0` }}>
-        <h2 style={{ marginBottom: 0, ...scale(0.8) }}>
+        <h2 style={{ margin: 0, ...scale(0.8), borderBottom: 0 }}>
           <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
         </h2>
 

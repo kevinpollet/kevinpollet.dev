@@ -45,7 +45,11 @@ export const Layout = ({ children, location, title }) => {
           </h3>
         )}
 
-        <h1 style={{ ...scale(2) }}>{title || site.siteMetadata.title}</h1>
+        <h1
+          style={{ ...scale(1.8), fontWeight: 800, margin: 0, borderBottom: 0 }}
+        >
+          {title || site.siteMetadata.title}
+        </h1>
 
         {isHomePage ? <Bio /> : null}
       </header>
