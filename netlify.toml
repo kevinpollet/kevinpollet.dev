@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://inspiring-hermann-b9dd46.netlify.com/*"
+  to = "https://kevinpollet.codes/:splat"
+  status = 301
+  force = true
