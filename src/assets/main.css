@@ -44,9 +44,9 @@ a {
   }
 }
 
-.gatsby-highlight pre[class*="language-"] {
-  border-radius: 2px;
-  overflow: initial;
+.gatsby-highlight {
+  margin: 1em 0;
+  overflow: auto;
 }
 
 @media screen and (max-width: 600px) {
