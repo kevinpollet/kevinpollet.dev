@@ -30,27 +30,29 @@ export default ({ data, location, pageContext }) => {
         dangerouslySetInnerHTML={{ __html: html }}
       />
 
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          paddingTop: rhythm(3 / 2),
-        }}
-      >
-        {previous && (
-          <h3 style={{ marginBottom: 0, marginRight: "auto" }}>
-            <Link to={previous.fields.slug}>
-              ← {previous.frontmatter.title}
-            </Link>
-          </h3>
-        )}
-        {next && (
-          <h3 style={{ marginBottom: 0, marginLeft: "auto" }}>
-            <Link to={next.fields.slug}>{next.frontmatter.title} →</Link>
-          </h3>
-        )}
-      </div>
+      {(next || previous) && (
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            paddingTop: rhythm(3 / 2),
+          }}
+        >
+          {previous && (
+            <h3 style={{ marginBottom: 0, marginRight: "auto" }}>
+              <Link to={previous.fields.slug}>
+                ← {previous.frontmatter.title}
+              </Link>
+            </h3>
+          )}
+          {next && (
+            <h3 style={{ marginBottom: 0, marginLeft: "auto" }}>
+              <Link to={next.fields.slug}>{next.frontmatter.title} →</Link>
+            </h3>
+          )}
+        </div>
+      )}
     </Layout>
   );
 };
