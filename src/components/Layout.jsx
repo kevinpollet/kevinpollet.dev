@@ -30,11 +30,12 @@ export const Layout = ({ children, location, title }) => {
           borderBottom: "1px solid hsla(0,0%,0%,0.07)",
         }}
       >
-        {isHomePage ? null : (
+        {!isHomePage && (
           <h3 style={{ marginBottom: rhythm(1.2) }}>
             <Link to="/">← Posts</Link>
           </h3>
         )}
+
         <h1
           style={{
             marginTop: 0,
@@ -45,7 +46,8 @@ export const Layout = ({ children, location, title }) => {
         >
           {title}
         </h1>
-        {isHomePage ? <Bio /> : null}
+
+        {isHomePage && <Bio />}
       </header>
 
       <main style={{ flex: 1 }}>{children}</main>
