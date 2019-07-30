@@ -62,23 +62,20 @@ export const Layout = ({ children, location, title }) => {
           paddingTop: rhythm(1 / 2),
         }}
       >
-        <ul
-          style={{
-            listStyleType: "none",
-            margin: 0,
-          }}
-        >
-          <li>Found a typo or a bug?</li>
+        <ul style={{ listStyleType: "none", margin: 0 }}>
           <li>
-            Submit an{" "}
-            <a href="https://github.com/kevinpollet/kevinpollet.dev/issues/new">
-              issue
-            </a>{" "}
-            or open a{" "}
-            <a href="https://github.com/kevinpollet/kevinpollet.dev/pulls">
-              pull request
-            </a>
-            .
+            <p>Found a typo or a bug?</p>
+            <p>
+              Submit an{" "}
+              <a href="https://github.com/kevinpollet/kevinpollet.codes/issues/new">
+                issue
+              </a>{" "}
+              or open a{" "}
+              <a href="https://github.com/kevinpollet/kevinpollet.codes/pulls">
+                pull request
+              </a>
+              .
+            </p>
           </li>
           <li>
             <small>
