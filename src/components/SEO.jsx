@@ -29,7 +29,7 @@ export const SEO = ({ title, description }) => {
     <Helmet
       htmlAttributes={{ lang: "en" }}
       title={resolvedTitle}
-      titleTemplate="%s ✦ kevinpollet.dev"
+      titleTemplate="%s ✦ kevinpollet.codes"
       meta={[
         {
           name: "description",
