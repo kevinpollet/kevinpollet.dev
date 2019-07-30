@@ -5,39 +5,32 @@
  * found in the LICENSE.md file.
  */
 
-import { graphql, Link } from "gatsby";
 import React from "react";
+import { graphql } from "gatsby";
 import { Layout } from "../components/Layout";
-import { rhythm, scale } from "../utils/typography";
+import { PostList } from "../components/PostList";
 import { SEO } from "../components/SEO";
 
 export default ({ data, location }) => {
-  const posts = data.allMarkdownRemark.edges
-    .map(elt => elt.node)
-    .map(post => (
-      <div key={post.id} style={{ padding: `${rhythm(1 / 3)} 0` }}>
-        <h2 style={{ margin: 0, ...scale(0.8), borderBottom: 0 }}>
-          <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
-        </h2>
-
-        <small style={{ ...scale(-1 / 5) }}>
-          {post.frontmatter.date} ✦ 🍱 {post.timeToRead} min read
-        </small>
-
-        <p>{post.frontmatter.description}</p>
-      </div>
-    ));
+  const { site, allMarkdownRemark } = data;
+  const { title } = site.siteMetadata;
+  const posts = allMarkdownRemark.edges.map(elt => elt.node);
 
   return (
-    <Layout location={location}>
+    <Layout title={title} location={location}>
       <SEO />
-      {posts}
+      <PostList posts={posts} />
     </Layout>
   );
 };
 
 export const pageQuery = graphql`
   query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {

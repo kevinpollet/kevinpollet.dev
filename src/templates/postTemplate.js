@@ -5,22 +5,30 @@
  * found in the LICENSE.md file.
  */
 
-import { graphql, Link } from "gatsby";
 import React from "react";
+import { graphql, Link } from "gatsby";
 import { Layout } from "../components/Layout";
 import { SEO } from "../components/SEO";
 import { rhythm } from "../utils/typography";
 
 export default ({ data, location, pageContext }) => {
   const { markdownRemark } = data;
-  const { frontmatter, html } = markdownRemark;
+  const { frontmatter, html, timeToRead } = markdownRemark;
+  const { title, date, description } = frontmatter;
   const { previous, next } = pageContext;
 
   return (
-    <Layout title={frontmatter.title} location={location}>
-      <SEO title={frontmatter.title} description={frontmatter.description} />
+    <Layout location={location} title={title}>
+      <SEO title={title} description={description} />
 
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <small>
+        {date} ✦ 🍱 {timeToRead} min read
+      </small>
+
+      <div
+        style={{ padding: `${rhythm(1)} 0` }}
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
 
       <div
         style={{
@@ -51,6 +59,7 @@ export const pageQuery = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      timeToRead
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title

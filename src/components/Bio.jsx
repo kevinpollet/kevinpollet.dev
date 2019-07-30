@@ -5,9 +5,9 @@
  * found in the LICENSE.md file.
  */
 
-import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
 import React from "react";
+import Img from "gatsby-image";
+import { useStaticQuery, graphql } from "gatsby";
 import { rhythm } from "../utils/typography";
 
 export const Bio = () => {
