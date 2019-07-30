@@ -5,15 +5,9 @@
  * found in the LICENSE.md file.
  */
 
-a {
-  color: #14997e;
-  font-family: "Lora";
-  font-style: italic;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
+.gatsby-highlight {
+  margin: 1em 0;
+  overflow: auto;
 }
 
 .bio {
@@ -42,11 +36,6 @@ a {
       margin: 0;
     }
   }
-}
-
-.gatsby-highlight {
-  margin: 1em 0;
-  overflow: auto;
 }
 
 @media screen and (max-width: 600px) {
