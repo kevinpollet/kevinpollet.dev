@@ -9,7 +9,7 @@ module.exports = {
   siteMetadata: {
     title: "Kevin Pollet",
     author: "Kevin Pollet",
-    description: "Blog posts by Kevin Pollet",
+    description: "Personal blog by Kevin Pollet.",
     siteUrl: "https://kevinpollet.codes/",
     social: {
       twitter: "@kevinpollet",

@@ -29,7 +29,7 @@ export const SEO = ({ title, description }) => {
     <Helmet
       htmlAttributes={{ lang: "en" }}
       title={resolvedTitle}
-      titleTemplate="%s ✦ kevinpollet.codes"
+      titleTemplate="%s — kevinpollet.codes"
       meta={[
         {
           name: "description",
@@ -48,7 +48,7 @@ export const SEO = ({ title, description }) => {
           content: resolvedDescription,
         },
         {
-          property: "twitter:card",
+          name: "twitter:card",
           content: "summary",
         },
         {
