@@ -74,11 +74,7 @@ export const Layout = ({ children, location, title }) => {
             </p>
           </li>
           <li>
-            <small>
-              Built with <a href="https://www.gatsbyjs.org/">Gatsby</a> and
-              deployed on <a href="https://www.netlify.com/">Netlify</a>, ©{" "}
-              {new Date().getFullYear()} kevinpollet
-            </small>
+            <small>© {new Date().getFullYear()} — kevinpollet</small>
           </li>
         </ul>
       </footer>

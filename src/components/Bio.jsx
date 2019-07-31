@@ -10,7 +10,7 @@ import Img from "gatsby-image";
 import { useStaticQuery, graphql } from "gatsby";
 import { rhythm } from "../utils/typography";
 
-export const Bio = () => {
+export const Bio = ({ style = {} }) => {
   const { site, avatar, twitterIcon, gitHubIcon } = useStaticQuery(
     graphql`
       query {
@@ -49,7 +49,7 @@ export const Bio = () => {
   );
 
   return (
-    <div className="bio">
+    <div className="bio" style={style}>
       <Img
         style={{ marginRight: rhythm(1 / 2) }}
         imgStyle={{ borderRadius: 50 }}
