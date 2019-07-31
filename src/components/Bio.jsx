@@ -16,7 +16,7 @@ export const Bio = () => {
       query {
         avatar: file(relativePath: { eq: "avatar.jpg" }) {
           childImageSharp {
-            fixed(width: 70, height: 70) {
+            fixed(width: 60, height: 60) {
               ...GatsbyImageSharpFixed
             }
           }
@@ -57,8 +57,7 @@ export const Bio = () => {
       />
 
       <ul className="description">
-        <li>✦ OSS ❤</li>
-        <li>✦ Software Engineer</li>
+        <li>✦ Software engineer & OSS ❤</li>
         <li>✦ Java, TypeScript, Go, Node.js, Docker, AWS</li>
       </ul>
 
