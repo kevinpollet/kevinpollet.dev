@@ -8,18 +8,6 @@
 import Typography from "typography";
 import gitHubTheme from "typography-theme-github";
 
-gitHubTheme.overrideThemeStyles = () => ({
-  a: {
-    color: "#14997e",
-    fontFamily: "Lora",
-    fontStyle: "italic",
-    textDecoration: "none",
-  },
-  "a:hover": {
-    textDecoration: "underline",
-  },
-});
-
 const typography = new Typography(gitHubTheme);
 
 // Hot reload typography in development.

@@ -5,6 +5,30 @@
  * found in the LICENSE.md file.
  */
 
+:root {
+  --primary-color: #14997e;
+}
+
+a {
+  color: var(--primary-color);
+  font-family: Lora;
+  font-style: italic;
+  text-decoration: "none";
+
+  &:hover {
+    text-decoration: "underline";
+  }
+}
+
+:not(pre) > code[class="language-text"] {
+  color: var(--primary-color);
+  font-size: 0.9em;
+  padding: 0.1em;
+  border-radius: 0.2em;
+  background: rgba(20, 153, 126, 0.05);
+  border: 1px solid rgba(20, 153, 126, 0.05);
+}
+
 .gatsby-highlight {
   margin: 1em 0;
   overflow: auto;
