@@ -7,7 +7,6 @@
 
 import React from "react";
 import { graphql, Link } from "gatsby";
-import { Bio } from "../components/Bio";
 import { Layout } from "../components/Layout";
 import { SEO } from "../components/SEO";
 import { rhythm } from "../utils/typography";
@@ -31,21 +30,13 @@ export default ({ data, location, pageContext }) => {
         dangerouslySetInnerHTML={{ __html: html }}
       />
 
-      <Bio
-        style={{
-          padding: rhythm(1),
-          margin: `${rhythm(1)} 0`,
-          boxShadow: "0 1px 5px 0 rgba(210,214,220,0.5)",
-        }}
-      />
-
       {(next || previous) && (
         <div
           style={{
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
-            paddingTop: rhythm(3 / 2),
+            padding: `${rhythm(3 / 2)} 0`,
           }}
         >
           {previous && (
