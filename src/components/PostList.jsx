@@ -18,6 +18,6 @@ export const PostList = ({ posts }) =>
       <small>
         {frontmatter.date} ✦ 🍱 {timeToRead} min read
       </small>
-      <p>{frontmatter.description}</p>
+      <p style={{ paddingTop: rhythm(1 / 4) }}>{frontmatter.description}</p>
     </div>
   ));
