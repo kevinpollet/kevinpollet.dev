@@ -45,7 +45,7 @@ As an example, the following `.dockerignore` instructs the Docker CLI to exclude
 # Ignore everything
 *
 
-# Allow files and folders with a pattern starting by !
+# Allow files and folders with a pattern starting with !
 !lib/**/*.js
 ```
 
