@@ -26,7 +26,7 @@ export const Layout = ({ children, location, title }) => {
     >
       <header
         style={{
-          paddingBottom: rhythm(1 / 2),
+          paddingBottom: rhythm(1 / 4),
           borderBottom: "1px solid hsla(0,0%,0%,0.07)",
         }}
       >

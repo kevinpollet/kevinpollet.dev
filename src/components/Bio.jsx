@@ -9,6 +9,7 @@ import React from "react";
 import Img from "gatsby-image";
 import { useStaticQuery, graphql } from "gatsby";
 import { rhythm } from "../utils/typography";
+import devToIcon from "../assets/devto-icon.svg";
 
 export const Bio = ({ style = {} }) => {
   const { site, avatar, twitterIcon, gitHubIcon } = useStaticQuery(
@@ -41,6 +42,7 @@ export const Bio = ({ style = {} }) => {
             social {
               twitter
               gitHub
+              devTo
             }
           }
         }
@@ -78,6 +80,19 @@ export const Bio = ({ style = {} }) => {
           />
           <a href={`https://github.com/${site.siteMetadata.social.gitHub}`}>
             GitHub
+          </a>
+        </li>
+
+        <li>
+          <img
+            style={{ marginRight: rhythm(1 / 4) }}
+            src={devToIcon}
+            alt="Kevin Pollet's DEV Profile"
+            height="26"
+            width="26"
+          />
+          <a href={`https://dev.to/${site.siteMetadata.social.devTo}`}>
+            Dev.to
           </a>
         </li>
       </ul>

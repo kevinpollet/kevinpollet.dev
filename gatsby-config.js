@@ -14,6 +14,7 @@ module.exports = {
     social: {
       twitter: "@kevinpollet",
       gitHub: "kevinpollet",
+      devTo: "kevinpollet",
     },
   },
   plugins: [
