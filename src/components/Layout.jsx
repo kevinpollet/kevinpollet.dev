@@ -40,8 +40,8 @@ export const Layout = ({ children, location, title }) => {
           style={{
             marginTop: 0,
             borderBottom: 0,
-            fontWeight: 800,
-            ...scale(2),
+            fontWeight: 900,
+            ...scale(1.8),
           }}
         >
           {title}

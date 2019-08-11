@@ -30,8 +30,12 @@ a {
 }
 
 .gatsby-highlight {
-  margin: 1em 0;
-  overflow: auto;
+  margin-bottom: 1em;
+
+  & pre {
+    font-size: 0.9em;
+    border-radius: 4px;
+  }
 }
 
 .bio {
