@@ -10,7 +10,7 @@ module.exports = {
     title: "Kevin Pollet",
     author: "Kevin Pollet",
     description: "Personal blog by Kevin Pollet.",
-    siteUrl: "https://kevinpollet.codes/",
+    siteUrl: "https://kevinpollet.dev/",
     social: {
       twitter: "@kevinpollet",
       gitHub: "kevinpollet",
@@ -74,7 +74,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-139142142-2",
+        trackingId: "UA-139142142-1",
       },
     },
     "gatsby-plugin-react-helmet",

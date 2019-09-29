@@ -13,8 +13,8 @@ As said in the description, every journey has a beginning and here is a little w
 I've already used static site generators like [Jekyll][1] and [Hugo][2] but I've never used [Gatsby][3] before. When I've decided to create ~~another~~ a blog, it was a good opportunity to try Gatsby. To start my journey I've opened https://www.gatsbyjs.org/tutorial/ in my browser and entered the following commands in my shell:
 
 ```shell
-$ npx gatsby-cli new kevinpollet.codes
-$ cd kevinpollet.codes && npm run develop
+$ npx gatsby-cli new kevinpollet.dev
+$ cd kevinpollet.dev && npm run develop
 ```
 
 After many days, I was really pleased by the simplicity and the productivity of this framework. The list of plugins and resources is impressive, the only limit is your creativity. If you're familiar with JavaScript and React, give it a try, I'm sure you'll be pleased.

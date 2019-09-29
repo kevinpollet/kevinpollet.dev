@@ -63,11 +63,11 @@ export const Layout = ({ children, location, title }) => {
             <p>Found a typo or a bug?</p>
             <p>
               Submit an{" "}
-              <a href="https://github.com/kevinpollet/kevinpollet.codes/issues/new">
+              <a href="https://github.com/kevinpollet/kevinpollet.dev/issues/new">
                 issue
               </a>{" "}
               or open a{" "}
-              <a href="https://github.com/kevinpollet/kevinpollet.codes/pulls">
+              <a href="https://github.com/kevinpollet/kevinpollet.dev/pulls">
                 pull request
               </a>
               .
