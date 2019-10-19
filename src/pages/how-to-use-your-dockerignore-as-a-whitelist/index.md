@@ -24,7 +24,7 @@ When you invoke the `docker build` command, the Docker CLI looks for a file name
 
 For example, if you want to exclude the `.git` folder and all markdown files from the build `context`, add the following content to your `.dockerignore`:
 
-```
+```shell
 .git
 *.md
 ```
@@ -41,7 +41,7 @@ Pretty easy!
 
 As an example, the following `.dockerignore` instructs the Docker CLI to exclude everything excepted the `JS` files within the `lib` folder from the build `context`:
 
-```
+```shell
 # Ignore everything
 *
 
