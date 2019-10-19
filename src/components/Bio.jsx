@@ -59,8 +59,8 @@ export const Bio = ({ style = {} }) => {
       />
 
       <ul className="description">
-        <li>✦ Software engineer & OSS ❤</li>
-        <li>✦ Java, TypeScript, Go, Node.js, Docker, AWS</li>
+        <li>Software Engineer, OSS Enthusiast.</li>
+        <li>Always learning and coding with passion.</li>
       </ul>
 
       <ul className="links">
