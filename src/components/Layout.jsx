@@ -17,7 +17,7 @@ export const Layout = ({ children, location, title }) => {
     <div
       style={{
         margin: "0 auto",
-        maxWidth: rhythm(30),
+        maxWidth: rhythm(28),
         padding: `${isHomePage ? rhythm(2) : rhythm(1)} ${rhythm(1 / 2)} 0`,
         display: "flex",
         flexDirection: "column",
@@ -41,7 +41,7 @@ export const Layout = ({ children, location, title }) => {
             marginTop: 0,
             borderBottom: 0,
             fontWeight: 900,
-            ...scale(1.8),
+            ...scale(1.7),
           }}
         >
           {title}
