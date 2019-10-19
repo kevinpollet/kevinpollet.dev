@@ -32,7 +32,7 @@ export const Layout = ({ children, location, title }) => {
       >
         {!isHomePage && (
           <h3 style={{ marginBottom: rhythm(1.2) }}>
-            <Link to="/">← Posts</Link>
+            <Link to="/">← Back</Link>
           </h3>
         )}
 
