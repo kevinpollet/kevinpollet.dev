@@ -22,7 +22,7 @@ export default ({ data, location, pageContext }) => {
       <SEO title={title} description={description} />
 
       <small>
-        {date} ✦ 🍱 {timeToRead} min read
+        {date} • {timeToRead} min read
       </small>
 
       <div

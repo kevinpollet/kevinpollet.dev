@@ -16,7 +16,7 @@ export const PostList = ({ posts }) =>
         <Link to={fields.slug}>{frontmatter.title}</Link>
       </h2>
       <small>
-        {frontmatter.date} ✦ 🍱 {timeToRead} min read
+        {frontmatter.date} • {timeToRead} min read
       </small>
       <p style={{ paddingTop: rhythm(1 / 4) }}>{frontmatter.description}</p>
     </div>
