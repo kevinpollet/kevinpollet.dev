@@ -12,12 +12,12 @@ import { rhythm, scale } from "../utils/typography";
 export const PostList = ({ posts }) =>
   posts.map(({ id, fields, frontmatter, timeToRead }) => (
     <div key={id} style={{ margin: `${rhythm(1)} 0` }}>
-      <h2 style={{ ...scale(0.8), margin: 0, padding: 0, borderBottom: 0 }}>
+      <h2 style={{ ...scale(0.8), marginTop: 0, padding: 0, borderBottom: 0 }}>
         <Link to={fields.slug}>{frontmatter.title}</Link>
       </h2>
       <small>
         {frontmatter.date} • {timeToRead} min read
       </small>
-      <p style={{ paddingTop: rhythm(1 / 4) }}>{frontmatter.description}</p>
+      <p>{frontmatter.description}</p>
     </div>
   ));
