@@ -53,7 +53,11 @@ export const Bio = ({ style = {} }) => {
 
       <ul className="links">
         <li>
-          <a href={`https://twitter.com/${site.siteMetadata.social.twitter}`}>
+          <a
+            href={`https://twitter.com/${site.siteMetadata.social.twitter}`}
+            rel="noopener noreferrer"
+            target="blank"
+          >
             <img
               style={{ marginRight: rhythm(1 / 4) }}
               src={twitterIcon}
@@ -64,7 +68,11 @@ export const Bio = ({ style = {} }) => {
           </a>
         </li>
         <li>
-          <a href={`https://github.com/${site.siteMetadata.social.gitHub}`}>
+          <a
+            href={`https://github.com/${site.siteMetadata.social.gitHub}`}
+            rel="noopener noreferrer"
+            target="blank"
+          >
             <img
               style={{ marginRight: rhythm(1 / 4) }}
               src={gitHubIcon}
@@ -76,7 +84,11 @@ export const Bio = ({ style = {} }) => {
         </li>
 
         <li>
-          <a href={`https://dev.to/${site.siteMetadata.social.devTo}`}>
+          <a
+            href={`https://dev.to/${site.siteMetadata.social.devTo}`}
+            rel="noopener noreferrer"
+            target="blank"
+          >
             <img
               style={{ marginRight: rhythm(1 / 4) }}
               src={devToIcon}
