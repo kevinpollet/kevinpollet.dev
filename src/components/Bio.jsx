@@ -10,28 +10,16 @@ import Img from "gatsby-image";
 import { useStaticQuery, graphql } from "gatsby";
 import { rhythm } from "../utils/typography";
 import devToIcon from "../assets/devto-icon.svg";
+import gitHubIcon from "../assets/github-icon.png";
+import twitterIcon from "../assets/twitter-icon.png";
 
 export const Bio = ({ style = {} }) => {
-  const { site, avatar, twitterIcon, gitHubIcon } = useStaticQuery(
+  const { site, avatar } = useStaticQuery(
     graphql`
       query {
         avatar: file(relativePath: { eq: "avatar.jpg" }) {
           childImageSharp {
             fixed(width: 60, height: 60) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        twitterIcon: file(relativePath: { eq: "twitter-icon.png" }) {
-          childImageSharp {
-            fixed(width: 26, height: 26) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        gitHubIcon: file(relativePath: { eq: "github-icon.png" }) {
-          childImageSharp {
-            fixed(width: 26, height: 26) {
               ...GatsbyImageSharpFixed
             }
           }
@@ -58,41 +46,44 @@ export const Bio = ({ style = {} }) => {
         fixed={avatar.childImageSharp.fixed}
       />
 
-      <ul className="description">
-        <li>Software Engineer, OSS Enthusiast.</li>
-        <li>Always learning and coding with passion.</li>
-      </ul>
+      <p className="description">
+        Software Engineer, OSS Enthusiast. <br />
+        Always learning and coding with passion.
+      </p>
 
       <ul className="links">
         <li>
-          <Img
-            style={{ marginRight: rhythm(1 / 4) }}
-            fixed={twitterIcon.childImageSharp.fixed}
-          />
           <a href={`https://twitter.com/${site.siteMetadata.social.twitter}`}>
-            Twitter
+            <img
+              style={{ marginRight: rhythm(1 / 4) }}
+              src={twitterIcon}
+              alt="Kevin Pollet's Twitter Profile"
+              height="26"
+              width="26"
+            />
           </a>
         </li>
         <li>
-          <Img
-            style={{ marginRight: rhythm(1 / 4) }}
-            fixed={gitHubIcon.childImageSharp.fixed}
-          />
           <a href={`https://github.com/${site.siteMetadata.social.gitHub}`}>
-            GitHub
+            <img
+              style={{ marginRight: rhythm(1 / 4) }}
+              src={gitHubIcon}
+              alt="Kevin Pollet's GitHub Profile"
+              height="26"
+              width="26"
+            />
           </a>
         </li>
 
         <li>
-          <img
-            style={{ marginRight: rhythm(1 / 4) }}
-            src={devToIcon}
-            alt="Kevin Pollet's DEV Profile"
-            height="26"
-            width="26"
-          />
           <a href={`https://dev.to/${site.siteMetadata.social.devTo}`}>
-            Dev.to
+            <img
+              style={{ marginRight: rhythm(1 / 4) }}
+              src={devToIcon}
+              alt="Kevin Pollet's DEV Profile"
+              height="26"
+              width="26"
+            />
           </a>
         </li>
       </ul>

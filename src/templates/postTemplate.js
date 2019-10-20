@@ -26,6 +26,7 @@ export default ({ data, location, pageContext }) => {
       </small>
 
       <div
+        className="post-content"
         style={{ padding: `${rhythm(1)} 0` }}
         dangerouslySetInnerHTML={{ __html: html }}
       />

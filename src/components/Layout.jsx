@@ -17,8 +17,8 @@ export const Layout = ({ children, location, title }) => {
     <div
       style={{
         margin: "0 auto",
-        maxWidth: rhythm(28),
-        padding: `${isHomePage ? rhythm(2) : rhythm(1)} ${rhythm(1 / 2)} 0`,
+        maxWidth: rhythm(30),
+        padding: `${rhythm(3 / 2)} ${rhythm(1)}`,
         display: "flex",
         flexDirection: "column",
         minHeight: "100vh",
@@ -74,7 +74,7 @@ export const Layout = ({ children, location, title }) => {
             </p>
           </li>
           <li>
-            <small>© {new Date().getFullYear()} — kevinpollet</small>
+            <small>© {new Date().getFullYear()} — Kevin Pollet</small>
           </li>
         </ul>
       </footer>
