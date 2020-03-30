@@ -1,7 +1,6 @@
 ---
 date: 2019-10-17
 title: Introducing seel
-description: Build Docker images for your Node.js applications without effort.
 ---
 
 I'm impatient and thrilled to introduce [seel][1], a command-line tool to containerize your **Node.js** application without effort. Not all developers are Docker/container experts and containerizing an application is not a simple task. For example, you will have to:

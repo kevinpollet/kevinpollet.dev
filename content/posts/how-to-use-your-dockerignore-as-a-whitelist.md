@@ -1,7 +1,6 @@
 ---
-date: 2019-08-10
 title: How to use your .dockerignore as a whitelist
-description: Maintaining the exclusion patterns in your .dockerignore can be hard as your project grows and evolves. Using this file as a whitelist is an elegant way to keep things clean, secure and easy to maintain.
+date: 2019-08-10
 ---
 
 Many tools use ignore files to exclude files from build, process or publish steps (e.g. `.npmignore` for npm, `.gitignore` for Git and `.dockerignore` for Docker). As your project grows, evolves, it can be hard to maintain the exclusion patterns and, as a side effect, you can expose unwanted or sensitive files. Using your `.dockerignore` as a whitelist can be an elegant option to avoid these mistakes and to reduce the effort to keep things up to date.
