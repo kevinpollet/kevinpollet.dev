@@ -1,0 +1,12 @@
+baseURL = "https://kevinpollet.dev/"
+title = "kevinpollet.dev"
+languageCode = "en"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "taxonomyTerm"]
+googleAnalytics = "UA-139142142-1"
+
+[params]
+  author = "Kevin Pollet"
+  gitHubURL = "https://github.com/kevinpollet"
+  linkedInURL = "https://linkedin.com/in/kevinpollet"
+  twitterURL = "https://twitter.com/@kevinpollet"

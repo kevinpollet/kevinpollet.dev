@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      {{ if .IsHome }}{{ .Site.Params.author }}{{ else }}{{ .Title }}{{ end }} —
+      {{ .Site.Title }}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {{ $tachyionsCSS := resources.Get "css/tachyons.css" }}
+    {{ $mainCSS := resources.Get "css/main.scss" | resources.ToCSS }}
+    {{ $bundleCSS := slice $tachyionsCSS $mainCSS | resources.Concat "css/bundle.css" | resources.Minify }}
+    <link rel="stylesheet" href="{{ $bundleCSS.Permalink }}" />
+
+    {{ range .AlternativeOutputFormats }}
+    <link
+      rel="{{ .Rel }}"
+      type="{{ .MediaType.Type }}"
+      href="{{ .Permalink | safeURL }}"
+    />
+    {{ end }}
+
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
+  </head>
+  <body class="mw8 center pa4 pa5-ns">
+    {{ partial "header.html" . }}
+
+    <main class="mv5">
+      {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ partial "footer.html" . }}
+    {{ template "_internal/google_analytics_async.html" . }}
+  </body>
+</html>

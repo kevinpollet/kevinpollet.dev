@@ -1,0 +1,16 @@
+<header>
+  <div class="f3">
+    <h1 class="athelas ma0">{{ .Site.Title }}</h1>
+  </div>
+
+  <nav>
+    <ul class="menu">
+      <li><a href="{{ relref . "/posts" }}">Posts</a></li>
+      <li><a href="{{ relref . "/about.html"}}">About</a></li>
+      <li><a href="{{ "/posts/index.xml" | absURL }}" target="_blank" rel="noopener noreferrer">RSS</a></li>
+      <li><a href="{{ .Site.Params.gitHubURL }}" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="{{ .Site.Params.twitterURL }}" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+      <li><a href="{{ .Site.Params.linkedInURL }}" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    </ul>
+  </nav>
+</header>
