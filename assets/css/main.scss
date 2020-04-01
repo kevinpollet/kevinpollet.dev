@@ -1,0 +1,28 @@
+@import "./tachyons.css";
+
+a {
+  color: blue;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.menu {
+  padding-left: 0;
+
+  li {
+    display: inline;
+
+    &:before {
+      content: "/";
+      padding-right: 5px;
+    }
+  }
+}
+
+.post {
+  h1 {
+    @extend .f1 !optional;
+  }
+}

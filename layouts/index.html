@@ -1,0 +1,11 @@
+{{ define "main" }}
+
+  {{ range where .Site.RegularPages "Section" "posts" }}
+  <div class="mt4">
+    <h2 class="mb2 normal"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    <span class="f6">{{ .Date.Format "January 2, 2006" }} / {{ .ReadingTime }} min</span>
+    <p class="tj">{{ .Summary }}</p>
+  </div>
+  {{ end }}
+
+{{ end }}
