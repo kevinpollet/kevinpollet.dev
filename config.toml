@@ -7,7 +7,7 @@ googleAnalytics = "UA-139142142-1"
 
 [params]
   author = "Kevin Pollet"
-  images = ["card.png"]
+  images = ["logo.png"]
   gitHubURL = "https://github.com/kevinpollet"
   linkedInURL = "https://linkedin.com/in/kevinpollet"
   twitterURL = "https://twitter.com/@kevinpollet"
