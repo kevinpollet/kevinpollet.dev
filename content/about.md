@@ -4,16 +4,15 @@ layout: about
 ---
 
 ```
-func about() {
+bio := `
 
-    me := `
-      OSS Enthusiast;
-      Software Engineer;
+  OSS Enthusiast.
 
-      Passionate learner and coder;
+  Software Engineer @Containous.
 
-      Go, TypeScript, Java, Node.js,
-      Containers, Cloud and DevOps addict;
-    `
-}
+  Passionate learner and coder.
+
+  Go, TypeScript, Java, Node.js,
+  Containers, Cloud and DevOps addict.
+`
 ```

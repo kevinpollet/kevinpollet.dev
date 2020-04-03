@@ -1,25 +1,27 @@
 a {
   color: blue;
 
-  &:visited,
-  &:active {
-    color: blue;
-  }
-
   &:hover {
     text-decoration: none;
   }
 }
 
 .menu {
-  padding-left: 0;
+  ul {
+    margin: 0;
+    padding: 0;
 
-  li {
-    display: inline;
+    li {
+      display: inline;
 
-    &:before {
-      content: "/";
-      padding: 0 5px;
+      &::before {
+        content: "/";
+        padding: 0 5px;
+      }
+    }
+
+    li:first-of-type::before {
+      padding-left: 0;
     }
   }
 }
@@ -33,7 +35,7 @@ a {
 
   h2,
   h3 {
-    margin-top: 2.75rem;
+    margin-top: 2.25rem;
   }
 
   .highlight pre {
@@ -43,8 +45,11 @@ a {
   }
 
   :not(pre) > code {
-    padding: 0.2rem;
+    font-weight: 400;
+    color: rgb(102, 102, 102);
+    border: 1px solid #eaeaea;
+    background-color: #fafafa;
+    padding: 2px;
     border-radius: 0.2em;
-    background: #eeeeee;
   }
 }

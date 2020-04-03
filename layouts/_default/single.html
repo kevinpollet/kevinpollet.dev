@@ -1,10 +1,9 @@
 {{ define "main" }}
-<article class="post serif fw3 lh-copy">
+<article class="post">
   <div class="mb4">
-    <h1 class="mb0">{{ .Title }}</h1>
+    <h1 class="f2 f1-ns mb0 lh-title">{{ .Title }}</h1>
     <span class="f6 gray">{{ .Date.Format "January 2, 2006" }} / {{ .ReadingTime }} min</span>
   </div>
-
-  {{ .Content }}
+  <div>{{ .Content }}</div>
 </article>
 {{ end }}
