@@ -11,6 +11,12 @@ This repository contains the source code for [kevinpollet.dev](https://kevinpoll
 hugo server -D
 ```
 
+## Build
+
+```
+hugo --gc --minify
+```
+
 ## License
 
 [MIT](./LICENSE.md)
