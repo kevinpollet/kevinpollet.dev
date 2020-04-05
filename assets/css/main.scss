@@ -1,14 +1,5 @@
 a {
   color: blue;
-
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-.logo {
-  width: 90px;
-  border-radius: 10%;
 }
 
 .menu {
@@ -18,15 +9,11 @@ a {
 
     li {
       display: inline;
+      padding-right: 10px;
 
       &::before {
         content: "/";
-        padding: 0 5px;
       }
-    }
-
-    li:first-of-type::before {
-      padding-left: 0;
     }
   }
 }

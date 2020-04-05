@@ -27,14 +27,13 @@
     {{ template "_internal/opengraph.html" . }}
     {{ template "_internal/twitter_cards.html" . }}
   </head>
-  <body class="lh-copy sans-serif mw8 center pa2 pa4-ns">
+  <body class="lh-copy sans-serif mw8 center pa3 pa4-ns">
     {{ partial "header.html" . }}
 
-    <main class="mv5">
-      {{ block "main" . }}{{ end }}
-    </main>
+    {{ block "main" . }}{{ end }}
 
     {{ partial "footer.html" . }}
+
     {{ template "_internal/google_analytics_async.html" . }}
   </body>
 </html>
