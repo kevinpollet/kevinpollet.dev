@@ -1,8 +1,8 @@
-baseURL = "https://kevinpollet.dev/"
 title = "kevinpollet.dev"
+baseURL = "https://kevinpollet.dev/"
+disableKinds = ["taxonomy", "taxonomyTerm"]
 languageCode = "en"
 enableRobotsTXT = true
-disableKinds = ["taxonomy", "taxonomyTerm"]
 googleAnalytics = "UA-139142142-1"
 
 [params]
