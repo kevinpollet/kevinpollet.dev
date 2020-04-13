@@ -1,13 +1,13 @@
-<header class="flex flex-column pb3" style="border-bottom: 1px solid gray;">
-  <h1 class="f2 athelas ma0">{{ .Site.Params.Author }}</h1>
-  <nav class="menu courier">
+<header class="flex flex-column pb3 mb4">
+  <h1 class="f2 ma0">{{ .Site.Params.Author }}</h1>
+  <nav class="menu">
     <ul>
       <li><a href="{{ relref . "/posts" }}">Posts</a></li>
       <li><a href="{{ relref . "/about.html"}}">About</a></li>
-      <li><a href="{{ "/posts/index.xml" | absURL }}" target="_blank" rel="noopener noreferrer">RSS</a></li>
       <li><a href="{{ .Site.Params.gitHubURL }}" target="_blank" rel="noopener noreferrer">GitHub</a></li>
       <li><a href="{{ .Site.Params.twitterURL }}" target="_blank" rel="noopener noreferrer">Twitter</a></li>
       <li><a href="{{ .Site.Params.linkedInURL }}" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="{{ "/posts/index.xml" | absURL }}" target="_blank" rel="noopener noreferrer">RSS</a></li>
     </ul>
   </nav>
 </header>

@@ -1,11 +1,21 @@
+html {
+  color: rgb(51,51,51);
+  font-family: "Fira Sans", sans-serif;
+}
+
+header {
+  border-bottom: 1px solid #E8E8E8;
+}
+
 a {
-  color: blue;
+  color: rgb(24, 99, 161);
 }
 
 .menu {
   ul {
     margin: 0;
     padding: 0;
+    color: rgb(24, 99, 161);
 
     li {
       display: inline;
@@ -27,7 +37,7 @@ a {
 
   h2,
   h3 {
-    margin-top: 2.25rem;
+    margin-top: 2rem;
   }
 
   .highlight pre {
