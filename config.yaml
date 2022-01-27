@@ -1,0 +1,43 @@
+baseURL: https://kevinpollet.dev/
+title: kevinpollet.dev
+theme: anubis
+languageCode: en
+copyright: kevinpollet
+
+# SEO
+enableRobotsTXT: true
+googleAnalytics: UA-139142142-1
+
+# Params
+params:
+  author: Kevin Pollet
+  social:
+    - id: github
+      name: GitHub
+      icon: github
+      url: https://github.com/kevinpollet
+
+    - id: twitter
+      name: Twitter
+      icon: twitter
+      url: https://twitter.com/@kevinpollet
+
+    - id: linkedin
+      name: Linkedin
+      icon: linkedin
+      url: https://www.linkedin.com/in/kevinpollet
+
+# Menu Items
+menu:
+  main:
+    - name: Home
+      url: /
+      weight: 1
+
+    - name: Posts
+      url: /posts
+      weight: 2
+
+    - name: About
+      url: /about
+      weight: 3
